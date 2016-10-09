@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="<%= _.join(_.takeRight(_.split(package,'.'),3),'-')%>-json" namespace="/<%= _.join(_.takeRight(_.split(package,'.'),3),'/')%>" extends="struts-json">
+		<% _.forEach(methods,function(m){%>
+		<action name="<%=m%>" class="<%= package+'.'+_.upperFirst(name)+'Action'%>"
+			method="<%=m%>">
+			<result type="json">
+				<param name="root">
+					jsonResult
+				</param>
+			</result>
+		</action>
+		<% }); %>
+	</package>
+</struts>

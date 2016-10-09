@@ -1,0 +1,280 @@
+{
+  "basePath": "xy/src/",
+  "corePath": "main/java/",
+  "testPath": "test/java/",
+  "webappPath": "main/webapp/",
+  "xmlPath": "main/resources/struts/",
+  "core": {
+    "com": {
+      "yiwisdom": {
+        "xy": {
+          "hw": {
+            "main": {
+              "home": {
+                "home": {
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@backend": {
+                    "love": 0
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1
+                  }
+                }
+              }
+            },
+            "prescription": {
+              "boil": {
+                "boil": {
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@backend": {
+                    "notice": 1,
+                    "cancel":1
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1
+                  }
+                }
+              },
+              "deliver":{
+                "deliver": {
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@backend": {
+                    "confirm": 1,
+                    "cancel":1
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1
+                  }
+                }
+              }
+            }
+          },
+          "rw": {
+            "main": {
+              "home": {
+                "home": {
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@backend": {
+                    "love": 0
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1
+                  }
+                }
+              }
+            },
+            "appointment": {
+              "reservation": {
+                "reservation": {
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@backend": {
+                    "cancel": 1
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1
+                  }
+                }
+              },
+              "waiting": {
+                "waiting": {
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@backend": {
+                    "confirm": 1,
+                    "signIn":1,
+                    "cancel": 1
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1
+                  }
+                }
+              }
+            },
+            "prescription": {
+              "charge": {
+                "charge": {
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@backend": {
+                    "cancel": 1
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1
+                  }
+                }
+              },
+              "coupon": {
+                "coupon":{
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1
+                  }
+                }
+              }
+            }
+          },
+          "mw": {
+            "doctor": {
+              "info": {
+                "info": {
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1
+                  }
+                }
+              }
+            },
+            "main": {
+              "home": {
+                "home": {
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1
+                  }
+                }
+              }
+            },
+            "qrcode": {
+              "doctor": {
+                "doctor": {
+                  "@@leaf": 1,
+                  "@backend": {
+                    "love": 0
+                  },
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "test": {
+    "package": "com.yiwisdom.xy"
+  },
+  "xml": {
+  },
+  "webapp": {
+  }
+}
