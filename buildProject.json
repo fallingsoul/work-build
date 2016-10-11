@@ -121,28 +121,6 @@
                     "scss": "n"
                   },
                   "@backend": {
-                    "cancel": 1
-                  },
-                  "@frontend": {
-                    "list": 1,
-                    "view": 1,
-                    "edit": 1
-                  }
-                }
-              },
-              "waiting": {
-                "waiting": {
-                  "@@leaf": 1,
-                  "@@replace": {
-                    "action": "n",
-                    "service": "n",
-                    "test": "n",
-                    "xml": "n",
-                    "html": "n",
-                    "js": "n",
-                    "scss": "n"
-                  },
-                  "@backend": {
                     "confirm": 1,
                     "signIn":1,
                     "cancel": 1
