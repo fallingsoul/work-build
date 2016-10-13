@@ -134,6 +134,31 @@
               }
             },
             "prescription": {
+              "deliver":{
+                "deliver": {
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@backend": {
+					"pickUpOneSelf":1,
+                    "noticePickUp": 1,
+                    "confirm": 1,
+                    "cancel":1
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1
+                  }
+                }
+              },
               "charge": {
                 "charge": {
                   "@@leaf": 1,

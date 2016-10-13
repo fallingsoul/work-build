@@ -199,11 +199,12 @@ gulp.task('includeXML', function () {
     "use strict";
     gulp.src('buildProject.json')
         .pipe(each(function (content1, file, callback) {
-            const xy = JSON.parse(content1).core.com.yiwisdom.xy;
+			const buildParams = JSON.parse(content1);
+            const xy = buildParams.core.com.yiwisdom.xy;
             for (var k in xy) {
                 (function (k) {
                     var includes = '';
-                    gulp.src(['../resources/struts/' + k + '/struts-*.xml'])
+                    gulp.src([buildParams.basePath+'main/resources/struts/' + k + '/struts-*.xml'])
                         .pipe(each(function (content2, file, callback) {
                             var a = file.history[0].split('\\');
                             includes += '<include file="' + a.slice(a.length - 3, a.length).join('/') + '"></include>\n    ';
@@ -219,7 +220,7 @@ gulp.task('includeXML', function () {
                                 //     defaultChoice: replace.action //y,n,d    replace skip diff
                                 // }))
                                 .pipe(rename('struts.xml'))
-                                .pipe(gulp.dest('../resources/struts/' + k + '/'));
+                                .pipe(gulp.dest(buildParams.basePath+'main/resources/struts/' + k + '/'));
                             callback(null, content3);
                         }));
                 })(k);
