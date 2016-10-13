@@ -32,10 +32,12 @@
                   }
                 }
               }
-            },
-            "prescription": {
-              "boil": {
-                "boil": {
+            }
+          },
+          "rw": {
+            "main": {
+              "home": {
+                "home": {
                   "@@leaf": 1,
                   "@@replace": {
                     "action": "n",
@@ -47,31 +49,7 @@
                     "scss": "n"
                   },
                   "@backend": {
-                    "notice": 1,
-                    "cancel":1
-                  },
-                  "@frontend": {
-                    "list": 1,
-                    "view": 1,
-                    "edit": 1
-                  }
-                }
-              },
-              "deliver":{
-                "deliver": {
-                  "@@leaf": 1,
-                  "@@replace": {
-                    "action": "n",
-                    "service": "n",
-                    "test": "n",
-                    "xml": "n",
-                    "html": "n",
-                    "js": "n",
-                    "scss": "n"
-                  },
-                  "@backend": {
-                    "confirm": 1,
-                    "cancel":1
+                    "love": 0
                   },
                   "@frontend": {
                     "list": 1,
@@ -80,12 +58,10 @@
                   }
                 }
               }
-            }
-          },
-          "rw": {
-            "main": {
-              "home": {
-                "home": {
+            },
+            "order": {
+              "history": {
+                "history": {
                   "@@leaf": 1,
                   "@@replace": {
                     "action": "n",

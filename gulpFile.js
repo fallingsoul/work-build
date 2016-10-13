@@ -255,5 +255,6 @@ gulp.task('resource', function () {
         .pipe(gulp.dest(basePath+'/fonts'));
 });
 gulp.task('default', function () {
-    gulp.start('buildFiles', 'includeXML');
+    gulp.start('buildFiles');
+	gulp.start('includeXML');
 });
