@@ -1,14 +1,16 @@
 /*
 Error: File to import not found or unreadable: ../../../com-pc/css/declare.
-        on line 1 of list.scss
+       Load path: E:/intellijProject
+        on line 2 of ./buildTemplate/list.scss
 
-1: @import "../../../com-pc/css/declare";
-2: .<%= cssClass%>{
-3: 
-4: }
+1: @charset "utf-8";
+2: @import "../../../com-pc/css/declare";
+3: .<%= cssClass%>{
+4: 
+5: }
 
 Backtrace:
-list.scss:1
+./buildTemplate/list.scss:2
 d:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:67:in `rescue in import'
 d:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:45:in `import'
 d:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -39,16 +41,17 @@ d:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:4
 d:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
 d:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `each'
 d:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-d:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin.rb:82:in `update_stylesheets'
-d:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
+d:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:294:in `watch'
+d:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin.rb:109:in `method_missing'
+d:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:360:in `watch_or_update'
 d:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:51:in `process_result'
 d:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/exec/base.rb:52:in `parse'
 d:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/exec/base.rb:19:in `parse!'
-d:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/bin/scss:13:in `<top (required)>'
-d:/Ruby23-x64/bin/scss:23:in `load'
-d:/Ruby23-x64/bin/scss:23:in `<main>'
+d:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/bin/sass:13:in `<top (required)>'
+d:/Ruby23-x64/bin/sass:23:in `load'
+d:/Ruby23-x64/bin/sass:23:in `<main>'
 */
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: ../../../com-pc/css/declare.\A         on line 1 of list.scss\A \A 1: @import \"../../../com-pc/css/declare\";\A 2: .<%= cssClass%>{\A 3: \A 4: }"; }
+  content: "Error: File to import not found or unreadable: ../../../com-pc/css/declare.\A        Load path: E:/intellijProject\A         on line 2 of ./buildTemplate/list.scss\A \A 1: @charset \"utf-8\";\A 2: @import \"../../../com-pc/css/declare\";\A 3: .<%= cssClass%>{\A 4: \A 5: }"; }

@@ -9,8 +9,7 @@ import org.junit.runners.MethodSorters;
 public class <%= _.upperFirst(name)%>ActionTest extends StrutsSpringTestCaseLoad{
 <% _.forEach(methods,function(m){%>
     public void test<%= _.upperFirst(m)%>() throws Exception {
-        JSONObject jsonResult = exc("/<%= _.join(_.takeRight(_.split(package,'.'),3),'/') + '/'+m%>");
-        assertEquals(jsonResult.get("ljt_error_code"),0L);
+        JSONObject jsonResult = excCode("/<%= _.join(_.takeRight(_.split(package,'.'),3),'/') + '/'+m%>");
     }
 <% }); %>
 }

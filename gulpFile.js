@@ -28,14 +28,22 @@ var util = require('util'),
         list: 1,
         add: 1,
         edit: 1,
-    };
+		detail: 1,
+		load: 1,
+		init: 1,
+    },
+	PATH = {
+		webapp:'xy/src/main/webapp/',
+	};
 var gulp = require('gulp'),
     template = require('gulp-template'),
     concat = require('gulp-concat'),
     conflict = require('gulp-conflict'),
     each = require('gulp-each'),
     flatten = require('gulp-flatten'),
-    rename = require('gulp-rename');
+	sass = require('gulp-sass'),
+    rename = require('gulp-rename'),
+    uglify = require('gulp-uglify');
 
 gulp.task('buildFiles', function () {
     "use strict";
@@ -229,15 +237,25 @@ gulp.task('includeXML', function () {
         }));
 
 });
+gulp.task('sass', function () {
+	gulp.src(PATH.webapp+'**/*.sass')
+	.pipe(sass().on('error',sass.logError))
+	.pipe(gulp.dest(PATH.webapp));
+});
 gulp.task('resource', function () {
     var resources = [
+        'xy/src/main/webapp/com-pc/ref/jquery.js',
+        'bower_components/bootstrap/dist/js/bootstrap.js',
         'bower_components/angular/angular.js',
         'bower_components/angular-animate/angular-animate.js',
         'bower_components/angular-touch/angular-touch.js',
         'bower_components/angular-bootstrap/ui-bootstrap.js',
         'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
         'bower_components/angular-ui-router/release/angular-ui-router.js',
+        'bower_components/angular-md5/angular-md5.js',
         'bower_components/oclazyload/dist/ocLazyLoad.js',
+        'bower_components/ng-file-upload/ng-file-upload.js',
+        'bower_components/w5c-validator/w5cValidator.js',
         'node_modules/sass.js/dist/sass.sync.js',
     ],basePath = 'xy/src/main/webapp/com-pc/ref/angular';
     gulp.src(resources)
@@ -249,10 +267,25 @@ gulp.task('resource', function () {
     ])
         .pipe(flatten())
         .pipe(gulp.dest(basePath+'/css'));
+	gulp.src([
+        'bower_components/bootstrap/dist/css/bootstrap.min.css',
+        'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
+    ])
+        .pipe(flatten())
+		.pipe(concat('all.min.css'))
+        .pipe(gulp.dest(basePath+'/css'));
     gulp.src([
         'bower_components/bootstrap/dist/fonts/**/*.*',
     ])
         .pipe(gulp.dest(basePath+'/fonts'));
+	var minResource = resources.slice(0,resources.length-1).map(function(v){
+		return v.replace(/\.js$/g,".min.js");
+	});
+	minResource.push('xy/src/main/webapp/com-pc/ref/angular/angular-locale_zh-cn.js');
+	gulp.src(minResource)
+		.pipe(concat('all.min.js'))
+		.pipe(uglify())
+        .pipe(gulp.dest(basePath));
 });
 gulp.task('default', function () {
     gulp.start('buildFiles');

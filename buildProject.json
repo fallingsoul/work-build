@@ -8,6 +8,112 @@
     "com": {
       "yiwisdom": {
         "xy": {
+          "fw": {
+            "main": {
+              "home": {
+                "home": {
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@backend": {
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1
+                  }
+                }
+              }
+            },
+            "finance": {
+              "settle": {
+                "settle": {
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@backend": {
+					"searchUser": 1,
+					"searchDepartment": 1 
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1,
+					"verify": 1
+                  }
+                }
+              }
+            }
+          },
+          "dw": {
+            "main": {
+              "home": {
+                "home": {
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@backend": {
+                    "call": 1,
+					"skip": 1
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1
+                  }
+                }
+              }
+            },
+            "prescription": {
+              "diagnosis": {
+                "diagnosis": {
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@backend": {
+                    "verify": 1,
+					"confirm": 1,
+					"searchMedicine": 1,
+					"preView": 1 
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1,
+					"verify": 1
+                  }
+                }
+              }
+            }
+          },
           "hw": {
             "main": {
               "home": {
@@ -29,6 +135,31 @@
                     "list": 1,
                     "view": 1,
                     "edit": 1
+                  }
+                }
+              }
+            },
+            "prescription": {
+              "examination": {
+                "examination": {
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@backend": {
+                    "verify": 1
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1,
+					"verify": 1
                   }
                 }
               }
@@ -73,7 +204,7 @@
                     "scss": "n"
                   },
                   "@backend": {
-                    "love": 0
+                    "cancel": 1
                   },
                   "@frontend": {
                     "list": 1,
@@ -100,6 +231,27 @@
                     "confirm": 1,
                     "signIn":1,
                     "cancel": 1
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1
+                  }
+                }
+              },
+              "room": {
+                "room": {
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@backend": {
                   },
                   "@frontend": {
                     "list": 1,
@@ -182,6 +334,10 @@
               "info": {
                 "info": {
                   "@@leaf": 1,
+				  "@backend": {
+                    "qrCodeAdd": 1,
+                    "searchPromotion": 1
+				  },
                   "@@replace": {
                     "action": "n",
                     "service": "n",
@@ -203,30 +359,6 @@
               "home": {
                 "home": {
                   "@@leaf": 1,
-                  "@@replace": {
-                    "action": "n",
-                    "service": "n",
-                    "test": "n",
-                    "xml": "n",
-                    "html": "n",
-                    "js": "n",
-                    "scss": "n"
-                  },
-                  "@frontend": {
-                    "list": 1,
-                    "view": 1,
-                    "edit": 1
-                  }
-                }
-              }
-            },
-            "qrcode": {
-              "doctor": {
-                "doctor": {
-                  "@@leaf": 1,
-                  "@backend": {
-                    "love": 0
-                  },
                   "@@replace": {
                     "action": "n",
                     "service": "n",
