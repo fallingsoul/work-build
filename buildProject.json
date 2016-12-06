@@ -90,6 +90,39 @@
                 "diagnosis": {
                   "@@leaf": 1,
                   "@@replace": {
+                    "action": "y",
+                    "service": "y",
+                    "test": "y",
+                    "xml": "y",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@backend": {
+                    "verify": 1,
+					"confirm": 1,
+					"searchMedicine": 1,
+					"preView": 1 ,
+					"delete": 1 ,
+					"saveHerb": 1 ,
+					"savePill": 1 ,
+					"saveAcupuncture": 1 ,
+					"saveAll": 1 
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1,
+					"herb": 1,
+					"pill": 1,
+					"acupuncture": 1
+                  }
+                }
+              },
+              "hangup": {
+                "hangup": {
+                  "@@leaf": 1,
+                  "@@replace": {
                     "action": "n",
                     "service": "n",
                     "test": "n",
@@ -99,16 +132,77 @@
                     "scss": "n"
                   },
                   "@backend": {
-                    "verify": 1,
-					"confirm": 1,
-					"searchMedicine": 1,
-					"preView": 1 
+                    "list": 0
                   },
                   "@frontend": {
                     "list": 1,
                     "view": 1,
-                    "edit": 1,
-					"verify": 1
+                    "edit": 1
+                  }
+                }
+              },
+              "call": {
+                "call": {
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@backend": {
+                    "list": 0
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1
+                  }
+                }
+              },
+              "finished": {
+                "finished": {
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@backend": {
+                    "list": 0
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1
+                  }
+                }
+              },
+              "history": {
+                "finished": {
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@backend": {
+					"review": 1
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1
                   }
                 }
               }
