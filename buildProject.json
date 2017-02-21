@@ -90,10 +90,10 @@
                 "diagnosis": {
                   "@@leaf": 1,
                   "@@replace": {
-                    "action": "y",
-                    "service": "y",
-                    "test": "y",
-                    "xml": "y",
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
                     "html": "n",
                     "js": "n",
                     "scss": "n"
@@ -186,7 +186,7 @@
                 }
               },
               "history": {
-                "finished": {
+                "history": {
                   "@@leaf": 1,
                   "@@replace": {
                     "action": "n",
@@ -203,6 +203,27 @@
                   "@frontend": {
                     "list": 1,
                     "view": 1
+                  }
+                }
+              },
+              "template": {
+                "template": {
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@backend": {
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+					"edit": 1
                   }
                 }
               }
@@ -421,6 +442,30 @@
                   }
                 }
               }
+            },
+            "user": {
+              "member": {
+                "member": {
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@backend": {
+                    "love": 0
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1
+                  }
+                }
+              }
             }
           },
           "mw": {
@@ -432,27 +477,6 @@
                     "qrCodeAdd": 1,
                     "searchPromotion": 1
 				  },
-                  "@@replace": {
-                    "action": "n",
-                    "service": "n",
-                    "test": "n",
-                    "xml": "n",
-                    "html": "n",
-                    "js": "n",
-                    "scss": "n"
-                  },
-                  "@frontend": {
-                    "list": 1,
-                    "view": 1,
-                    "edit": 1
-                  }
-                }
-              }
-            },
-            "main": {
-              "home": {
-                "home": {
-                  "@@leaf": 1,
                   "@@replace": {
                     "action": "n",
                     "service": "n",

@@ -1,7 +1,7 @@
 package <%= package%>;
 
 import com.yiwisdom.xy.StrutsSpringTestCaseLoad;
-import org.json.simple.JSONObject;
+import net.sf.json.JSONObject;
 import org.junit.FixMethodOrder;
 import org.junit.runners.MethodSorters;
 
