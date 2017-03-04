@@ -494,6 +494,31 @@
                 }
               }
             }
+          },
+          "oa": {
+            "user": {
+              "vip": {
+                "vip": {
+                  "@@leaf": 1,
+				  "@backend": {
+				  },
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1
+                  }
+                }
+              }
+            }
           }
         }
       }
