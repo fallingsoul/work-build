@@ -1,17 +1,3 @@
-/**
- * Created by no fight no free on 2016/9/29.
- * 由于非常厌倦java web的每次都要建立一堆的  package service action test js css html 等等，每次都要copy
- * 项目管理需要，结构是一样的，其实就是复制就好了
- * 那为什么不维护一个项目工程目录的json ，以及 对应文件的模板呢！！
- * 直接生成所有文件，然后写业务代码就好了
- * let us begin!!
- * cnpm install --save-dev gulp gulp-exec gulp-filter gulp-foreach gulp-rename gulp-inject-string
- * cnpm install --save-dev gulp-template gulp-concat gulp-conflict gulp-each gulp-rename gulp-flatten
- *
- * https://www.npmjs.com/package/package_name/
- * https://lodash.com/docs/4.16.2#template
- */
-
 "use strict";
 var util = require('util'),
     replaceDefault = {
@@ -28,20 +14,20 @@ var util = require('util'),
         list: 1,
         add: 1,
         edit: 1,
-		detail: 1,
-		load: 1,
-		init: 1,
+        detail: 1,
+        load: 1,
+        init: 1,
     },
-	PATH = {
-		webapp:'xy/src/main/webapp/',
-	};
+    PATH = {
+        webapp: 'xy/src/main/webapp/',
+    };
 var gulp = require('gulp'),
     template = require('gulp-template'),
     concat = require('gulp-concat'),
     conflict = require('gulp-conflict'),
     each = require('gulp-each'),
     flatten = require('gulp-flatten'),
-	sass = require('gulp-sass'),
+    sass = require('gulp-sass'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify');
 
@@ -207,12 +193,12 @@ gulp.task('includeXML', function () {
     "use strict";
     gulp.src('buildProject.json')
         .pipe(each(function (content1, file, callback) {
-			const buildParams = JSON.parse(content1);
+            const buildParams = JSON.parse(content1);
             const xy = buildParams.core.com.yiwisdom.xy;
             for (var k in xy) {
                 (function (k) {
                     var includes = '';
-                    gulp.src([buildParams.basePath+'main/resources/struts/' + k + '/struts-*.xml'])
+                    gulp.src([buildParams.basePath + 'main/resources/struts/' + k + '/struts-*.xml'])
                         .pipe(each(function (content2, file, callback) {
                             var a = file.history[0].split('\\');
                             includes += '<include file="' + a.slice(a.length - 3, a.length).join('/') + '"></include>\n    ';
@@ -228,7 +214,7 @@ gulp.task('includeXML', function () {
                                 //     defaultChoice: replace.action //y,n,d    replace skip diff
                                 // }))
                                 .pipe(rename('struts.xml'))
-                                .pipe(gulp.dest(buildParams.basePath+'main/resources/struts/' + k + '/'));
+                                .pipe(gulp.dest(buildParams.basePath + 'main/resources/struts/' + k + '/'));
                             callback(null, content3);
                         }));
                 })(k);
@@ -237,10 +223,36 @@ gulp.task('includeXML', function () {
         }));
 
 });
+gulp.task('addHash2Html', function () {
+    "use strict";
+    var subSys = [
+        'rw',
+'dw',
+// 'mw',
+// 'hw',
+// 'bm',
+// 'fw',
+// 'wh',
+// 'oa',
+// 'dev',
+    ], baseUrl =PATH.webapp+'*/main/app/app.html', urls = [];
+    subSys.map(function (v, i) {
+        urls.push(baseUrl.replace('SUBSYS', v));
+    })
+    gulp.src(baseUrl)
+        .pipe(each(function (content1, file, callback) {
+            var time = new Date().getTime();
+            content1 = content1.replace(/<script.+src\s*=\s*"([^"]+\.js)[^"]*".*>\s*<\/script>/g, '<script src="$1?t=' + time + '"></script>')
+                .replace(/<link.+href\s*=\s*"([^"]+\.css)[^"]*".*>/g, '<link rel="stylesheet" href="$1?t=' + time + '">');
+            callback(null, content1);
+        }))
+        .pipe(gulp.dest(PATH.webapp));
+
+});
 gulp.task('sass', function () {
-	gulp.src(PATH.webapp+'**/*.sass')
-	.pipe(sass().on('error',sass.logError))
-	.pipe(gulp.dest(PATH.webapp));
+    gulp.src(PATH.webapp + '**/*.sass')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest(PATH.webapp));
 });
 gulp.task('resource', function () {
     var resources = [
@@ -257,7 +269,7 @@ gulp.task('resource', function () {
         'bower_components/ng-file-upload/ng-file-upload.js',
         'bower_components/w5c-validator/w5cValidator.js',
         'node_modules/sass.js/dist/sass.sync.js',
-    ],basePath = 'xy/src/main/webapp/com-pc/ref/angular';
+    ], basePath = 'xy/src/main/webapp/com-pc/ref/angular';
     gulp.src(resources)
         .pipe(flatten())
         .pipe(gulp.dest(basePath));
@@ -266,28 +278,28 @@ gulp.task('resource', function () {
         'bower_components/bootstrap/dist/css/bootstrap-theme.css',
     ])
         .pipe(flatten())
-        .pipe(gulp.dest(basePath+'/css'));
-	gulp.src([
+        .pipe(gulp.dest(basePath + '/css'));
+    gulp.src([
         'bower_components/bootstrap/dist/css/bootstrap.min.css',
         'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
     ])
         .pipe(flatten())
-		.pipe(concat('all.min.css'))
-        .pipe(gulp.dest(basePath+'/css'));
+        .pipe(concat('all.min.css'))
+        .pipe(gulp.dest(basePath + '/css'));
     gulp.src([
         'bower_components/bootstrap/dist/fonts/**/*.*',
     ])
-        .pipe(gulp.dest(basePath+'/fonts'));
-	var minResource = resources.slice(0,resources.length-1).map(function(v){
-		return v.replace(/\.js$/g,".min.js");
-	});
-	minResource.push('xy/src/main/webapp/com-pc/ref/angular/angular-locale_zh-cn.js');
-	gulp.src(minResource)
-		.pipe(concat('all.min.js'))
-		.pipe(uglify())
+        .pipe(gulp.dest(basePath + '/fonts'));
+    var minResource = resources.slice(0, resources.length - 1).map(function (v) {
+        return v.replace(/\.js$/g, ".min.js");
+    });
+    minResource.push('xy/src/main/webapp/com-pc/ref/angular/angular-locale_zh-cn.js');
+    gulp.src(minResource)
+        .pipe(concat('all.min.js'))
+        .pipe(uglify())
         .pipe(gulp.dest(basePath));
 });
 gulp.task('default', function () {
     gulp.start('buildFiles');
-	gulp.start('includeXML');
+    gulp.start('includeXML');
 });

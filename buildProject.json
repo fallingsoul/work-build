@@ -56,6 +56,30 @@
 					"verify": 1
                   }
                 }
+              },
+              "mark": {
+                "mark": {
+                  "@@leaf": 1,
+                  "@@replace": {
+                    "action": "n",
+                    "service": "n",
+                    "test": "n",
+                    "xml": "n",
+                    "html": "n",
+                    "js": "n",
+                    "scss": "n"
+                  },
+                  "@backend": {
+					"searchUser": 1,
+					"searchDepartment": 1 
+                  },
+                  "@frontend": {
+                    "list": 1,
+                    "view": 1,
+                    "edit": 1,
+					"verify": 1
+                  }
+                }
               }
             }
           },
